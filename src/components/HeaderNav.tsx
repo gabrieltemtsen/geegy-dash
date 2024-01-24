@@ -4,13 +4,13 @@ import { ArrowDownIcon, bellIcon, calenderIcon, searchIcon } from './Icons'
 
 const HeaderNav = () => {
   return (
-    <Flex pl={2} flexDirection={'column'} background={'#FAFAFA'} justify={'flex-end'} py={'18px'} borderBottom={'1px'} borderBottomColor={'#E5EAEF;'}>
+    <Flex pl={2} flexDirection={'column'}  justify={'flex-end'} py={'18px'} borderBottom={'1px'} borderBottomColor={'#E5EAEF;'}>
         <HStack display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
 
             <Text fontSize={'20px'} fontWeight={'600'} lineHeight={'28px'}>Dashboard </Text>  
 
             <Box display={'flex'} w={'29rem'} pl={9} justifyContent={'flex-start'}>
-                <Input    h={'48px'} pl={'10px'} alignItems={'center'} gap={'1px'} borderRadius={'24px'} border={'1px solid #DADDDD'} background={'white'} placeholder={`Search...`}  />
+                <Input    h={'48px'} pl={'10px'} alignItems={'center'} gap={'1px'} borderRadius={'24px'} border={'1px solid #DADDDD'}  placeholder={`Search...`}  />
             </Box> 
 
             <HStack ml={19}  display={'flex'} alignItems={'center'} gap={'20px'} >

@@ -17,13 +17,11 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 }
 
 @layer utilities {

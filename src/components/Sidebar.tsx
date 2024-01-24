@@ -1,10 +1,30 @@
-import { Flex, Box, Wrap, WrapItem, Link, VStack ,Image, Button} from '@chakra-ui/react'
-import React from 'react'
+import { Flex, Box, Wrap, WrapItem, Link, VStack ,Image, Button, useColorMode} from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
 import {SideBarIcons, LightIcon, darkIcon, ArrowIcon, logoutIcon, settingsIcon, focusIcon} from './Icons'
 const Sidebar = () => {
+    const { colorMode, toggleColorMode } = useColorMode();
+    const [clicked, setClicked] = useState(false);
+
+    const switchButtons = ()=> {
+
+        if(clicked === false) {
+            setClicked(true)
+            toggleColorMode();
+        }else {
+
+            setClicked(false);
+            toggleColorMode();
+        }
+        
+
+    }
+
+    useEffect(() => {
+
+        })
   return (
 
-    <Flex w={'80px'} p={'20px 0px'} flexDirection={'column'} alignItems={'center'} gap={'10px'} flexShrink={0} borderRight={'1px solid #EBECF2'} background={'#F7F9FA'}>  
+    <Flex h={'100vh'} w={'80px'} p={'20px 0px'} flexDirection={'column'} alignItems={'center'} gap={'10px'} flexShrink={0} borderRight={'1px solid #EBECF2'} >  
         <Box display={'flex'} flexDirection={'column'} alignItems={'center'} gap={'256px'} alignSelf={'stretch'}>
             <Box display={'flex'} flexDirection={'column'} alignItems={'center'} gap={'20px'} alignSelf={'stretch'}>
                 
@@ -32,20 +52,35 @@ const Sidebar = () => {
 
                     <Flex w={'80px'} p={'0px 10px'} justifyContent={'center'} alignItems={'center'} gap={10}>
                        <VStack>
-                        <Button display={'flex'} p={'6.5px 7.5px'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} borderRadius={'94px'} background={'#34CAA5'} w={'30px'} h={'40px'}>
+
+                        {clicked ? (
+                            <>
+                            <Button onClick={switchButtons} display={'flex'} p={'6.5px 7.5px'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} borderRadius={'94px'} background={'#34CAA5'} w={'30px'} h={'40px'}>
+                            {LightIcon}
+                            </Button>
+                            </>
+                        ) : 
+                        <>
+
+                             <Button onClick={switchButtons} display={'flex'} p={'6.5px 7.5px'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} borderRadius={'94px'} background={''} w={'30px'} h={'40px'}>
+                                {darkIcon}
+                            </Button>
+                        
+                        </>   }
+                        {/* <Button onClick={toggleColorMode} display={'flex'} p={'6.5px 7.5px'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} borderRadius={'94px'} background={'#34CAA5'} w={'30px'} h={'40px'}>
                             {LightIcon}
                         </Button>
 
                         <Button display={'flex'} p={'6.5px 7.5px'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} borderRadius={'94px'} background={''} w={'30px'} h={'40px'}>
                             {darkIcon}
-                        </Button>
+                        </Button> */}
 
                        </VStack>
 
                     </Flex>
                     </VStack>
 
-                    <VStack display={'flex'} w={'40'} h={'40'} justifyContent={'center'} alignItems={'center'} gap={10} mt={'12rem'}>
+                    <VStack display={'flex'} w={'40'} h={'40'} justifyContent={'center'} alignItems={'center'} gap={10} mt={'19rem'}>
                         <Link > 
                         {ArrowIcon}
                         </Link>
