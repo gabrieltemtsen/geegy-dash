@@ -31,3 +31,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.container {
+  display: flex;
+  width: 1440px;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fff;
+}
