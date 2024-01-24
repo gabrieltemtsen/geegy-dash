@@ -1,6 +1,6 @@
 import { Flex, Box, Wrap, WrapItem, Link, VStack ,Image, Button} from '@chakra-ui/react'
 import React from 'react'
-import {SideBarIcons, LightIcon, darkIcon, ArrowIcon, logoutIcon, settingsIcon} from './Icons'
+import {SideBarIcons, LightIcon, darkIcon, ArrowIcon, logoutIcon, settingsIcon, focusIcon} from './Icons'
 const Sidebar = () => {
   return (
 
@@ -20,11 +20,14 @@ const Sidebar = () => {
                         <>
                             <Flex key={icon.id} alignItems={'center'} h={'40px'}  p={'10px'} justifyContent={'space-between'} alignSelf={'stretch'} >
                                 <Link m={5} w={'24px'} h={'24px'} flexShrink={0}> 
+                                
                                    {icon.svg}                       
                                 </Link>
+                                
                         </Flex>
 
                         </>
+                        
                     ))}
 
                     <Flex w={'80px'} p={'0px 10px'} justifyContent={'center'} alignItems={'center'} gap={10}>
