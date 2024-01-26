@@ -8,7 +8,7 @@ import { ReactNode } from "react";
 export default function DashboardLayout({children}:{children:ReactNode}){
     const { colorMode, toggleColorMode } = useColorMode();
     return (
-        <Flex h={'100dvh'} minH={'700px'} maxH={'830px'}>
+        <Flex  h={'100dvh'} minH={'700px'} maxH={'830px'}>
   
 
         <Sidebar/>
