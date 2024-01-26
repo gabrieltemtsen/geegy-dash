@@ -1,10 +1,12 @@
-import { HStack, Box, Text, TableContainer, Thead, Tr, Th, Tbody, Td, WrapItem,  Table, Avatar} from '@chakra-ui/react';
+import { HStack, Box, Text, TableContainer, Thead, Tr, Th, Tbody, Td, WrapItem,  Table, Avatar, useColorMode} from '@chakra-ui/react';
 import React from 'react';
 import { fileIcon } from './Icons';
 
 const Orders: React.FC = () => {
+    const { colorMode, toggleColorMode } = useColorMode();
+
     return (
-        <Box p={3} m={7}  w={'806px'} h={'422px'} flexShrink={0} borderRadius={'14px'} border={'1px solid white'} background={'white'}>
+        <Box color={colorMode === "light" ? "" : "gray.700"} p={3} m={7}  w={'806px'} h={'422px'} flexShrink={0} borderRadius={'14px'} border={'1px solid white'} background={'white'}>
         <HStack  display={'flex'} w={'766px'} justifyContent={'space-between'} alignItems={'center'}>
           <Text fontSize={'18px'} fontWeight={600}>Last Orders</Text>
   

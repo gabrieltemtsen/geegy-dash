@@ -1,22 +1,22 @@
-import { Heading, Box, Flex, HStack, Text } from '@chakra-ui/react';
+import { Heading, Box, Flex, HStack, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
-import { bearishIcon, boxIcon, graphIcon } from './Icons';
+import { bearishIcon, boxIcon, graphIcon, SideBarIcons } from './Icons';
 
 
 const ActivityContainer = () => {
     return (
-        <Flex justifyContent={'center'} alignItems={'center'} borderRadius={'14px'} border={'1px solid #EDF2F7'} background={'#FFF'}>
-        <HStack display={'flex'} w={'207px'} justifyContent={'space-between'} alignItems={'center'}>
-            <Box w={'40px'} h={'40px'} flexShrink={0}>
-                {boxIcon}
-            </Box>
-            <Box w={'184px'} h={'32px'} flexShrink={0}>
+        <Flex  display={'inline-flex'} justifyContent={'center'} alignItems={'center'} borderRadius={'14px'} border={'1px solid #EDF2F7'} background={'#FFF'}>
+       
+        <Flex flexDirection={'column'} alignItems={'flex-start'} gap={'10px'}>
+        <HStack p={1} display={'flex'}  w={'237px'} justifyContent={'space-between'} alignItems={'center'}>
+        {boxIcon}
+            <Box w={'114px'} h={'32px'} flexShrink={0}>
         {graphIcon}
       </Box>
     </HStack>
     <Box display={'flex'} flexDirection={'column'} alignItems={'flex-start'} gap={'5px'}>
-      <Heading fontSize={'18px'} fontWeight={600}>Total Order</Heading>
-      <Text fontSize={'14px'} fontWeight={500}>350</Text>
+      <Text fontSize={'18px'} fontWeight={500}>Total Order</Text>
+      <Text fontSize={'24px'} fontWeight={600}>350</Text>
     </Box>
     <HStack display={'flex'} alignItems={'center'} gap={'10px'}>
       <Flex padding={'4px 8px'} gap={'4px'} alignItems={'center'} justify={'center'}>
@@ -30,6 +30,7 @@ const ActivityContainer = () => {
 
     </HStack>
 
+        </Flex>
 
     
 

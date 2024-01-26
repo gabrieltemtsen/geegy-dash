@@ -7,21 +7,32 @@ import { bearishIcon, boxIcon, fileIcon, graphIcon } from "@/components/Icons";
 import ActivityContainer from "@/components/ActivityContainer";
 import Orders from "@/components/Orders";
 
-
 export default function Home() {
   return (
-
-    <Box  >
-
-  <DashboardLayout >
-
-    <SalesTrend />
-    <Orders />
-
-
-  </DashboardLayout>
-      
+    <Box>
+      <DashboardLayout>
+        <Flex>
+          <Box flex={1}>
+            <SalesTrend />
+          </Box>
+          <Box flex={1} ml={4}>
+            <ActivityContainer />
+          </Box>
+        </Flex>
+        <Flex mt={4}>
+          <Box flex={1}>
+            <Orders />
+          </Box>
+          <Box flex={1} ml={4}>
+            <Box>
+              <Heading size="md">Top Platforms</Heading>
+              {/* Add your platform list component here */}
+            </Box>
+          </Box>
+        </Flex>
+      </DashboardLayout>
     </Box>
-    
   );
 }
+      
+  
