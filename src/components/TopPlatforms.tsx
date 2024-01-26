@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import {
   Box,
   Flex,
@@ -32,7 +33,7 @@ const TopPlatforms = () => {
         alignItems={"center"}
       >
         <Text fontSize={"18px"} fontWeight={600}>
-          Last Orders
+          Company's Progress
         </Text>
 
         <Text

@@ -19,37 +19,37 @@ import { fileIcon } from "./Icons";
 
 const ordersData = [
   {
-    name: "John Doe",
-    date: "May 10, 2023",
-    amount: "$200",
+    name: "David Herbert",
+    date: "Jan 10, 2024",
+    amount: "$2,000",
     status: "Paid",
     invoice: "view",
   },
   {
-    name: "Jane Smith",
-    date: "June 15, 2023",
-    amount: "$150",
+    name: "Gabriel Temtsen",
+    date: "Jan 28, 2024",
+    amount: "$250",
     status: "Pending",
     invoice: "view",
   },
   {
-    name: "Mike Johnson",
+    name: "Mike Jerry",
     date: "July 20, 2023",
-    amount: "$300",
+    amount: "$100",
     status: "Paid",
     invoice: "view",
   },
   {
     name: "Micheal James",
     date: "July 20, 2023",
-    amount: "$300",
+    amount: "$30",
     status: "Paid",
     invoice: "view",
   },
   {
     name: "Usman Aisha",
     date: "June 15, 2023",
-    amount: "$150",
+    amount: "$15",
     status: "Refund",
     invoice: "view",
   },
@@ -77,7 +77,7 @@ const Orders: React.FC = () => {
         alignItems={"center"}
       >
         <Text fontSize={"18px"} fontWeight={600}>
-          Last Orders
+          Top Users
         </Text>
 
         <Text

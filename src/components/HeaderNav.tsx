@@ -27,7 +27,7 @@ const HeaderNav = () => {
         alignItems={"center"}
       >
         <Text fontSize={"20px"} fontWeight={"600"} lineHeight={"28px"}>
-          Dashboard{" "}
+          Geegy Dash{" "}
         </Text>
 
         <Box pos={"relative"} width={"349px"} hideBelow={"850px"}>
@@ -100,10 +100,10 @@ const HeaderNav = () => {
             />
             <Flex flexDirection={"column"} gap={"1px"} alignItems={"flex-end"}>
               <Text fontSize={"16px"} fontWeight={400}>
-                Justin Bergson
+                David Herbert
               </Text>
               <Text fontSize={"14px"} fontWeight={300}>
-                justin@gmail.com
+                daveyH@gmail.com
               </Text>
             </Flex>
             <Button background={"transparent"} w={"20px"} h={"20px"}>

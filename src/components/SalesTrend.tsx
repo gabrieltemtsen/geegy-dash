@@ -66,7 +66,7 @@ const SalesTrend = () => {
           lineHeight="26px"
           color="#26282C"
         >
-          Sales Trends
+          GeegPay Users Trend
         </Heading>
         <HStack gap="10px">
           <Text as="span" fontWeight="medium" color="secondary" fontSize="14px">
@@ -85,7 +85,7 @@ const SalesTrend = () => {
             borderColor="#E1DFDF"
           >
             <Text fontSize="12px" as="span">
-              Weekly
+              Monthly
             </Text>{" "}
           </Button>
         </HStack>

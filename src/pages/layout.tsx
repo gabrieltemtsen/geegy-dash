@@ -6,13 +6,17 @@ import { ReactNode } from "react";
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex h={"100dvh"} minH={"700px"} maxH={"830px"}>
+    <Flex
+      direction={{ base: "column", md: "row" }}
+      minH={"100vh"}
+      minW={"100vw"}
+    >
       <Sidebar />
       <Stack pl={1} flex={1} gap={0} h={"full"}>
         <HeaderNav />
         <Box
-          w={"100vw"}
-          h={"100vw"}
+          w={"100%"}
+          h={"100%"}
           bg={colorMode === "light" ? "gray.100" : "gray.700"}
         >
           {children}
