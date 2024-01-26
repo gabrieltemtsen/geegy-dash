@@ -144,3 +144,8 @@ export const ArrowDownIcon = <svg xmlns="http://www.w3.org/2000/svg" width="20" 
 export const focusIcon = <svg xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
 <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D"/>
 </svg>
+
+export const lineIcon = <svg xmlns="http://www.w3.org/2000/svg" width="697" height="2" viewBox="0 0 697 2" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1 0.722168H696.413H1Z" fill="white"/>
+<path d="M1 0.722168H696.413" stroke="#EAEAEA" stroke-linecap="round" stroke-dasharray="4 4"/>
+</svg>

@@ -37,3 +37,42 @@ body {
   align-items: flex-start;
   background: #fff;
 }
+
+.scale-numbers {
+  display: inline-flex;
+  height: 255px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.scale-bar-container {
+    display: flex;
+  width: 696px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.scale-bar {
+  width: 30px;
+  height: 68px;
+  flex-shrink: 0;
+  border-radius: 20px 20px 0px 0px;
+  background: rgba(52, 202, 165, 0.10);
+}
+.scale-lines {
+  height: 1px;
+flex-shrink: 0;
+align-self: stretch;
+fill: var(--Neutral-White, #FFF);
+stroke-width: 1px;
+stroke: #EAEAEA;
+}
+
+.scale-month {
+  display: flex;
+  width: 696px;
+  align-items: flex-start;
+  gap: 30px;
+}
