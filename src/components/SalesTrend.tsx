@@ -1,91 +1,221 @@
-import { Box, Flex, HStack, Select, Text, useColorMode } from '@chakra-ui/react'
-import React from 'react'
-import { lineIcon } from './Icons';
+import React from 'react';
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Heading,
+  Select,
+  Text,
+  useColorMode,
+} from '@chakra-ui/react';
+import {
+  HighchartsChart,
+  HighchartsProvider,
+  Chart as ReactChart,
+  XAxis,
+  YAxis,
+  ColumnSeries,
+  Tooltip,
+} from 'react-jsx-highcharts';
+import Highcharts from 'highcharts';
+
+
 
 const SalesTrend = () => {
-    const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]
+  const priceOnChart = [
+    4000, 
+    35000,
+    29000,
+    15000,
+    48000, 
+    31000,
+    13700, 
+    19000, 
+    33000, 
+    6000,
+    17000, 
+    1900,
+  ]
+
   return (
-        <Box color={colorMode === "light" ? "black" : "black"} m={7} w={'806px'} height={'374px'} flexShrink={0} borderRadius={'14px'} border={'1px solid #EDF2F7'} background={'#FFF'}>
-            <Flex p={3} w={'766px'} justifyContent={'space-between'} alignItems={'center'} >
-                <Text  fontWeight={600} fontSize={'18px'} >Sales Trends</Text>
-                <HStack display={'flex'} alignItems={'center'}>
-                <Text w={'85px'} fontSize={'14px'} fontWeight={500}>Sort By: </Text>
-                <Select display={'flex'} p={''} alignItems={'center'} border={'1px solid grey'} gap={'10px'} borderRadius={'20px'}>
-                    <option value="weekly"> weekly</option>
-                    <option value="monthly">monthly</option>
-                </Select>
-            </HStack>
-            </Flex>
+    <Flex
+      m={7}
+      direction="column"
+      minW="350px"
+      px={5}
+      py={4}
+      w={{ xl: '806px', base: 'full' }}
+      flex={1}
+      h="374px"
+      color={colorMode === "light" ? "black" : "black"}
+      flexShrink={0} borderRadius={'14px'}
+      border={'1px solid #EDF2F7'} background={'#FFF'}
+      pos="relative"
 
-            <Box ml={2} className='scale-numbers'>
-                <Text fontSize={'12px'} fontWeight={600}>50, 000</Text>
-                <Text fontSize={'12px'} fontWeight={600}>40, 000</Text>
-                <Text fontSize={'12px'} fontWeight={600}>30, 000</Text>
-                <Text fontSize={'12px'} fontWeight={600}>20, 000</Text>
-                <Text fontSize={'12px'} fontWeight={600}>10, 000</Text>
-                <Text fontSize={'12px'} fontWeight={600}>5, 000</Text>
-                <Text fontSize={'12px'} fontWeight={600}>0</Text>
-                
-            </Box>
+    >
+      <Flex mb="10px" justify="space-between">
+        <Heading
+          fontWeight="semibold"
+          fontSize="18px"
+          lineHeight="26px"
+          color="#26282C"
+        >
+          Sales Trends
+        </Heading>
+        <HStack gap="10px">
+          <Text
+            as="span"
+            fontWeight="medium"
+            color="secondary"
+            fontSize="14px"
+          >
+            Sort by:
+          </Text>
+          <Button
+            variant="ghost"
+            colorScheme="appGray"
+            color="secondary"
+            rounded="full"
+            px={3}
+            py="6px"
+            gap="10px"
+            border="1px"
+            h={8}
+            borderColor="#E1DFDF"
+          >
+            <Text fontSize="12px" as="span">
+              Weekly
+            </Text>{' '}
+          </Button>
+        </HStack>
+      </Flex>
 
-           
-                <Box>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    <span className='scale-lines'> {lineIcon}</span>
-                    
-                <span className='scale-bar '></span>
-                <span className='scale-bar'></span>
-                <span className='scale-bar'></span>
-                <span className='scale-bar'></span>
-                <span className='scale-bar'></span>
-                <span className='scale-bar'></span>
-                <span className='scale-bar'></span>
-                <span className='scale-bar'></span>
-                <span className='scale-bar'></span>
-                <span className='scale-bar'></span>
-                <span className='scale-bar'></span>
-                <span className='scale-bar'></span>
-
-                
-            </Box>
-
-            <Box className='scale-month'>
-
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Jan</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Feb</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Mar</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Apr</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>May</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Jun</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Jul</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Aug</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Sep</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Oct</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Nov</Text>
-                <Text fontWeight={600} fontSize={'14px'} lineHeight={'22px'}>Dec</Text>
-
-
-
-
-
-
-
-
-
-            </Box>
-
+      <HighchartsProvider Highcharts={Highcharts}>
+        <HighchartsChart
+          plotOptions={{
+            column: {
+              clip: false,
+            },
+          }}
+        >
+          <Tooltip
+            headerFormat=""
+            backgroundColor="#000"
+            borderRadius={5}
+            style={{
+              color: 'white',
+              fontSize: '12px',
+            fontWeight: '500',
+              fontFamily: 'var(--font-jakarta)',
+            }}
+            valuePrefix="$"
+            useHTML
+            pointFormat="<b style='padding:5px 15px;font-size:12px;font-weight:500;height:26px'>{tooltip.valuePrefix}{point.y}</b>"
+          />
+          <ReactChart
+            style={{ flex: 1 }}
+            height="312px"
+            spacingLeft={4}
+            spacingRight={4}
+            spacingBottom={13}
+          />
+          <XAxis
+            lineWidth={0}
+            labels={{
+              style: {
+                fontFamily: 'var(--font-jakarta)',
+                fontWeight: '600',
+                fontSize: '14px',
+                color: '#525252',
+              },
+            }}
+            categories={months}
+          >
+            <XAxis.Title></XAxis.Title>
+          </XAxis>
+          <YAxis
             
-        </Box>    
-  )
-}
+            tickInterval={5000}
+            tickPositions={[0, 5000, 10000, 20000, 30000, 40000, 50000]}
+            gridLineWidth={1}
+            gridLineDashStyle="ShortDash"
+            gridLineColor="#EAEAEA"
+          >
+            <ColumnSeries
+              name=""
+              point={{
+                events: {
+                  mouseOver: function () {
+                    this.update(
+                      {
+                        color: {
+                          linearGradient: {
+                            x1: 0,
+                            x2: 0,
+                            y1: 0,
+                            y2: 1,
+                          },
+                          stops: [
+                            [0, 'rgba(52, 202, 165, 1)'],
+                            [1, 'rgba(52, 202, 165, 0.1)'],
+                          ],
+                        },
+                      },
+                      false
+                    );
 
-export default SalesTrend
+                    this.series.points.forEach( (point) => {
+                    if (point !== this as any) {
+                        point.update(
+                          {
+                            color: 'rgba(52, 202, 165, 0.12)',
+                          },
+                          false
+                        );
+                      }
+                    }, this);
+
+                    this.series.chart.redraw();
+                  },
+                  mouseOut: function () {
+                    this.series.points.forEach(function (point) {
+                      return point.update(
+                            {}
+                        );
+                    });
+
+                    this.series.chart.redraw();
+                  },
+                },
+              }}
+              pointWidth={30}
+              color="#34CAA5"
+              borderRadius="50px"
+              borderWidth={0}
+              data={priceOnChart}
+            />
+          </YAxis>
+        </HighchartsChart>
+      </HighchartsProvider>
+    </Flex>
+  );
+};
+
+export default SalesTrend;

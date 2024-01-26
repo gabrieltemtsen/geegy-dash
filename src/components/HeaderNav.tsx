@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Flex, HStack, Input, Text } from '@chakra-ui/react'
+import { Avatar, Box, Button, Flex, HStack, Input, Text, useBreakpointValue } from '@chakra-ui/react'
 import React from 'react'
 import { ArrowDownIcon, bellIcon, calenderIcon, searchIcon } from './Icons'
 
@@ -9,8 +9,30 @@ const HeaderNav = () => {
 
             <Text fontSize={'20px'} fontWeight={'600'} lineHeight={'28px'}>Dashboard </Text>  
 
-            <Box display={'flex'} w={'29rem'} pl={9} justifyContent={'flex-start'}>
-                <Input    h={'48px'} pl={'10px'} alignItems={'center'} gap={'1px'} borderRadius={'24px'} border={'1px solid #DADDDD'}  placeholder={`Search...`}  />
+            <Box pos={"relative"} width={"349px"} hideBelow={"850px"}>
+                <Box zIndex={4}
+              w={"18px"}
+              h={"18px"}
+              top={"50%"}
+              transform={"auto"}
+              translateY={"-50%"}
+              pos={"absolute"}
+              left={4}>
+                {searchIcon}
+                </Box>
+                <Input pl={10}
+              pos={"relative"}
+              fontSize={"16px"}
+              border={"1px"}
+              borderColor={"appLightGray"}
+              _placeholder={{ color: "appLightGray" }}
+              color={"appBlack.400"}
+              lineHeight={"24px"}
+              bg={"white"}
+              w={"full"}
+              rounded={"full"}
+              h={"48px"}
+              placeholder="Search..." />
             </Box> 
 
             <HStack ml={19}  display={'flex'} alignItems={'center'} gap={'20px'} >
