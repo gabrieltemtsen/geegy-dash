@@ -18,10 +18,10 @@
 
 body {
   body {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     overflow-y: scroll;
     overflow-x: hidden;
-}
+  }
 }
 
 @layer utilities {
@@ -37,4 +37,3 @@ body {
   align-items: flex-start;
   background: #fff;
 }
-

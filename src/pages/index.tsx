@@ -1,6 +1,23 @@
 import HeaderNav from "@/components/HeaderNav";
 import Sidebar from "@/components/Sidebar";
-import { HStack, Text, Box, Select, Heading, Flex, Table, Thead, Tr, Th, Tbody, TableContainer, WrapItem, Avatar, Td, useBreakpointValue } from "@chakra-ui/react";
+import {
+  HStack,
+  Text,
+  Box,
+  Select,
+  Heading,
+  Flex,
+  Table,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  TableContainer,
+  WrapItem,
+  Avatar,
+  Td,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import DashboardLayout from "./layout";
 import SalesTrend from "@/components/SalesTrend";
 import { bearishIcon, boxIcon, fileIcon, graphIcon } from "@/components/Icons";
@@ -36,5 +53,3 @@ export default function Home() {
     </Box>
   );
 }
-      
-  

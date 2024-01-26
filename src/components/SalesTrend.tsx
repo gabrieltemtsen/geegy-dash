@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   Button,
@@ -8,7 +8,7 @@ import {
   Select,
   Text,
   useColorMode,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 import {
   HighchartsChart,
   HighchartsProvider,
@@ -17,42 +17,30 @@ import {
   YAxis,
   ColumnSeries,
   Tooltip,
-} from 'react-jsx-highcharts';
-import Highcharts from 'highcharts';
-
-
+} from "react-jsx-highcharts";
+import Highcharts from "highcharts";
 
 const SalesTrend = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ]
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
   const priceOnChart = [
-    4000, 
-    35000,
-    29000,
-    15000,
-    48000, 
-    31000,
-    13700, 
-    19000, 
-    33000, 
-    6000,
-    17000, 
+    4000, 35000, 29000, 15000, 48000, 31000, 13700, 19000, 33000, 6000, 17000,
     1900,
-  ]
+  ];
 
   return (
     <Flex
@@ -61,14 +49,15 @@ const SalesTrend = () => {
       minW="350px"
       px={5}
       py={4}
-      w={{ xl: '806px', base: 'full' }}
+      w={{ xl: "806px", base: "full" }}
       flex={1}
       h="374px"
       color={colorMode === "light" ? "black" : "black"}
-      flexShrink={0} borderRadius={'14px'}
-      border={'1px solid #EDF2F7'} background={'#FFF'}
+      flexShrink={0}
+      borderRadius={"14px"}
+      border={"1px solid #EDF2F7"}
+      background={"#FFF"}
       pos="relative"
-
     >
       <Flex mb="10px" justify="space-between">
         <Heading
@@ -80,12 +69,7 @@ const SalesTrend = () => {
           Sales Trends
         </Heading>
         <HStack gap="10px">
-          <Text
-            as="span"
-            fontWeight="medium"
-            color="secondary"
-            fontSize="14px"
-          >
+          <Text as="span" fontWeight="medium" color="secondary" fontSize="14px">
             Sort by:
           </Text>
           <Button
@@ -102,7 +86,7 @@ const SalesTrend = () => {
           >
             <Text fontSize="12px" as="span">
               Weekly
-            </Text>{' '}
+            </Text>{" "}
           </Button>
         </HStack>
       </Flex>
@@ -120,10 +104,10 @@ const SalesTrend = () => {
             backgroundColor="#000"
             borderRadius={5}
             style={{
-              color: 'white',
-              fontSize: '12px',
-            fontWeight: '500',
-              fontFamily: 'var(--font-jakarta)',
+              color: "white",
+              fontSize: "12px",
+              fontWeight: "500",
+              fontFamily: "var(--font-jakarta)",
             }}
             valuePrefix="$"
             useHTML
@@ -140,10 +124,10 @@ const SalesTrend = () => {
             lineWidth={0}
             labels={{
               style: {
-                fontFamily: 'var(--font-jakarta)',
-                fontWeight: '600',
-                fontSize: '14px',
-                color: '#525252',
+                fontFamily: "var(--font-jakarta)",
+                fontWeight: "600",
+                fontSize: "14px",
+                color: "#525252",
               },
             }}
             categories={months}
@@ -151,7 +135,6 @@ const SalesTrend = () => {
             <XAxis.Title></XAxis.Title>
           </XAxis>
           <YAxis
-            
             tickInterval={5000}
             tickPositions={[0, 5000, 10000, 20000, 30000, 40000, 50000]}
             gridLineWidth={1}
@@ -173,21 +156,21 @@ const SalesTrend = () => {
                             y2: 1,
                           },
                           stops: [
-                            [0, 'rgba(52, 202, 165, 1)'],
-                            [1, 'rgba(52, 202, 165, 0.1)'],
+                            [0, "rgba(52, 202, 165, 1)"],
+                            [1, "rgba(52, 202, 165, 0.1)"],
                           ],
                         },
                       },
-                      false
+                      false,
                     );
 
-                    this.series.points.forEach( (point) => {
-                    if (point !== this as any) {
+                    this.series.points.forEach((point) => {
+                      if (point !== (this as any)) {
                         point.update(
                           {
-                            color: 'rgba(52, 202, 165, 0.12)',
+                            color: "rgba(52, 202, 165, 0.12)",
                           },
-                          false
+                          false,
                         );
                       }
                     }, this);
@@ -196,9 +179,7 @@ const SalesTrend = () => {
                   },
                   mouseOut: function () {
                     this.series.points.forEach(function (point) {
-                      return point.update(
-                            {}
-                        );
+                      return point.update({});
                     });
 
                     this.series.chart.redraw();
