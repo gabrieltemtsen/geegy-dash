@@ -1,5 +1,5 @@
 
-## Geegy Dah
+## Geegy Dash
 
 Mockup for GeegPay Dashboard Analytics
 
